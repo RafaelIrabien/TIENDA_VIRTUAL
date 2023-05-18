@@ -1,0 +1,14 @@
+#Denegamos el acceso a las carpetas:
+Options All -Indexes
+
+#Configuramos URLs amigables
+RewriteEngine on
+
+#Verificamos si un direcctorio por el método de REQUEST es valido
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#Verificamos si un archivo por el método de REQUEST es valido
+RewriteCond %{REQUEST_FILENAME} !-f}
+
+#Hacemos unas configuraciones para almacenar en una variable #llamada "url" todo lo que contenga despues del archivo index.php
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
