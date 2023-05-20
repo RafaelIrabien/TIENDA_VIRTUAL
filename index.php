@@ -1,5 +1,7 @@
-<?php 
+ <?php   
+    
 
+    
 	//Verifica si hay un parámetro de URL llamado "url" en la cadena de consulta de la solicitud. Si tal parámetro existe y tiene un valor no vacío, asigna ese valor a $ruta. De lo contrario, asigna el valor predeterminado de "home/índice".
 	//Este código se usa a menudo para manejar el enrutamiento en una aplicación web, donde el valor del parámetro URL se usa para determinar la acción o página apropiada para mostrar.
 	$ruta = !empty($_GET['url']) ? $_GET['url'] : "Home/index";
@@ -8,8 +10,7 @@
 	$array = explode("/", $ruta);
 
 	//Asigna el primer elemento de $array (que representa el nombre del controlador) a la variable $controller.
-	$controller = $array[0];
-
+	$controller = ucfirst($array[0]);
 	//Inicializamos la variable $metodo con el valor predeterminado "índex".
 	$metodo = "index";
 
@@ -18,26 +19,28 @@
 
 	//Verificamos si el segundo elemento (1) de $array no está vacío.
 	if (!empty($array[1])) {
-
-		if ($array[1] != "") {
-			$metodo = $array[1];
-		}
-	}
+    if (!empty($array[1] != "")) {
+        $metodo = $array[1];
+    }
+}
+	
 
 
 	if (!empty($array[2])) {
-		if ($array[2] != "") {
-			$parametro = "";
+		if (!empty($array[2] != "")) {
+			
 
 			//Si se cumplen ambas condiciones, entra en un ciclo que comienza en el índice 2 y continúa hasta el final de la matriz (count($array)). En cada iteración del ciclo, concatena el valor en el índice actual ($array[$i]) con una coma (,) y lo agrega a la cadena $parametro.
 			for ($i=2; $i < count($array); $i++) { 
-				$parametro .= $array[$i] . ","; 
+				$parametro .= $array[$i]. ","; 
 			}
 			//Después del bucle, la coma final se elimina de la cadena $parametro mediante la función trim().
 			$parametro = trim($parametro, ",");
 		}
 	}
 
+
+	require_once "Config/App/Autoload.php";
 
 	//Creamos una variable para almacenar la ruta de nuestra carpeta Controllers
 	$dirControllers = "Controllers/".$controller.".php";
