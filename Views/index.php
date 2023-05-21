@@ -6,7 +6,7 @@
 	<title>Bienvenido</title>
 </head>
 <body>
-	<h1>Lorem</h1>
+	<h1>Vista Principal</h1>
 
 </body>
 </html>
