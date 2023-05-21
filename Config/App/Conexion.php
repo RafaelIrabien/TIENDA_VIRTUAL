@@ -6,13 +6,14 @@
 		public function __CONSTRUCT(){
 			//Indicamos la conexión
 			//Se construye una cadena de conexión PDO utilizando los valores de las constantes "host", "db" y "charset" (presumiblemente definidas en otro lugar).
-			$pdo = "mysql:host=" . host . ";dbname=" .db. ";" .charset. ;
+			
+			$pdo = "mysql:host=".HOST.";dbname=".DB.";".CHARSET;
 
 
 			//Capturamos las excepciones
 			try {
 				//Se crea un nuevo objeto PDO y se asigna a la propiedad "$conect".
-				$this->conect = new PDO($pdo, user, pass);
+				$this->conect = new PDO($pdo, USER, PASS);
 
 				//Indicamos el atributo para capturar las excepciones
 				//Se llama al método "setAttribute" en el objeto PDO para establecer el modo de error en "PDO::ERRMODE_EXCEPTION", lo que significa que PDO generará excepciones por errores.

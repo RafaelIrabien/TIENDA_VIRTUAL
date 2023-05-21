@@ -1,6 +1,6 @@
  <?php   
     
-
+ 	require_once "Config/Config.php";
     
 	//Verifica si hay un parámetro de URL llamado "url" en la cadena de consulta de la solicitud. Si tal parámetro existe y tiene un valor no vacío, asigna ese valor a $ruta. De lo contrario, asigna el valor predeterminado de "home/índice".
 	//Este código se usa a menudo para manejar el enrutamiento en una aplicación web, donde el valor del parámetro URL se usa para determinar la acción o página apropiada para mostrar.

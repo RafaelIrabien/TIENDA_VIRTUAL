@@ -22,6 +22,8 @@
 			if (file_exists($ruta)) {
 				require_once $ruta;
 				$this->model = new $model();
+
+
 			}
 		}
 
