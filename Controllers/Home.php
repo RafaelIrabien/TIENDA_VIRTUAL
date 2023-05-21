@@ -1,5 +1,4 @@
 <?php 
-require_once "Config/App/Controller.php";
 
 	class Home extends Controller{
 

@@ -57,9 +57,9 @@
 			//Si existe lo llamamos, y si tiene parametro tambien lo llamamos
 			$controller->$metodo($parametro);
 		} else {
-			echo "No existe el método";
+			 header('Location: '.BASE_URL.'errors');
 		}
 	} else {
-		echo "No existe el controlador";
+		 header('Location: ' . BASE_URL . 'errors');
 	}
 ?>
