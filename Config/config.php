@@ -1,7 +1,5 @@
 <?php 
 
-	
-
 	const BASE_URL = "http://localhost/TIENDA_VIRTUAL/";
 	const HOST = "localhost";
 	const USER = "root";
