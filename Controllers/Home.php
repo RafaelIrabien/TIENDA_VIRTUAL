@@ -12,6 +12,7 @@
 			//Traemos views del archivo Config/App/Controller.php
 			$this->views->getView('Home', "index", $data);
 		}
+
 	}
 
 
