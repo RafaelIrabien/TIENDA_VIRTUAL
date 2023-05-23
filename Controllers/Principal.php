@@ -22,6 +22,7 @@
 		//Vista Shop
 		public function shop() {
 			$data['title'] = "Nuestros Productos";
+			$this->views->getView('principal', "shop", $data);
 		}
 	}
 
