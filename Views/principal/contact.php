@@ -14,7 +14,9 @@
         </div>
     </div>
 
-    <!-- Start Map -->
+
+    
+    <!-- Start Map 
     <div id="mapid" style="width: 100%; height: 300px;"></div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script>
@@ -35,7 +37,7 @@
 
         mymap.scrollWheelZoom.disable();
         mymap.touchZoom.disable();
-    </script>
+    </script>  -->
     <!-- Ena Map -->
 
     <!-- Start Contact -->
