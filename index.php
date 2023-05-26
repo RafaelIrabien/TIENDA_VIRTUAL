@@ -41,6 +41,7 @@
 
 
 	require_once "Config/App/Autoload.php";
+	//require_once "Config/App/Helpers.php";
 
 	//Creamos una variable para almacenar la ruta de nuestra carpeta Controllers
 	$dirControllers = "Controllers/".$controller.".php";

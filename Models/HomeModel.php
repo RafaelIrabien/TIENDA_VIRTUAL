@@ -7,6 +7,14 @@
 			parent::__CONSTRUCT();
 	  }
 
+
+	  	//Listar categorías
+		public function getCategorias() {
+			$sql = "SELECT * FROM categorias";
+			return $this->selectAll($sql);
+		}
+		
+
 	}
 
  ?>
