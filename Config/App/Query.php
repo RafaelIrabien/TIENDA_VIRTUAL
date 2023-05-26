@@ -15,9 +15,9 @@
 
 		public function select(string $sql) {
         	$this->sql = $sql;
-        	$resul = $this->con->prepare($this->sql);
-        	$resul->execute();
-        	$data = $resul->fetch(PDO::FETCH_ASSOC);
+        	$result = $this->con->prepare($this->sql);
+        	$result->execute();
+        	$data = $result->fetch(PDO::FETCH_ASSOC);
         	return $data;
     	}
 

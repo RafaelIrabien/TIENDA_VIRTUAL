@@ -140,7 +140,7 @@
                  ?>
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="<?php echo BASE_URL . 'principal/shop-single/' . $productoN['id_producto']; ?>">
+                        <a href="<?php echo BASE_URL . 'principal/detail/' . $productoN['id_producto']; ?>">
                             <img src="<?php echo $productoN['imagen']; ?>" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
@@ -156,7 +156,7 @@
                                     <?php echo MONEDA . ' ' . $productoN['precio']; ?>
                                 </li>
                             </ul>
-                            <a href="<?php echo BASE_URL . 'principal/shop-single/' . $productoN['id_producto']; ?>" class="h2 text-decoration-none text-dark">
+                            <a href="<?php echo BASE_URL . 'principal/detail/' . $productoN['id_producto']; ?>" class="h2 text-decoration-none text-dark">
                                 <?php echo $productoN['nombre'] ?>
                             </a>
                             <p class="card-text">

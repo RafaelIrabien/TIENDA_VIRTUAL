@@ -19,7 +19,7 @@
 		}
 
 
-		//Vista Shop
+		//Vista shop
 		public function shop() {
 			$data['title'] = 'Nuestros Productos';
 			$this->views->getView('principal', "shop", $data);
@@ -27,8 +27,9 @@
 
 		//Vista detail
 		public function detail($id_producto) {
+			$data['producto'] = $this->model->getProducto($id_producto);
 			//Mostramos el nombre del producto seleccionado
-			$data['title'] = '-------------';
+			$data['title'] = $data['producto']['nombre'];
 			$this->views->getView('principal', "shop-single", $data);
 		}
 
