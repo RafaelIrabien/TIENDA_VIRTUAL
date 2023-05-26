@@ -679,7 +679,7 @@
 
 
     <!-- Start Slider Script -->
-    <script src="assets/js/slick.min.js"></script>
+    <script src="<?php echo BASE_URL . 'assets/js/slick.min.js'; ?>"></script>
     <script>
         $('#carousel-related-product').slick({
             infinite: true,
