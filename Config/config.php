@@ -7,7 +7,7 @@
 	const DB = "tienda_virtual";
 	const CHARSET = "charset=utf8";
 	const TITLE = "TIENDA VIRTUAL";
-	const MONEDA = "USD";
+	const MONEDA = "MXN";
 	const CLIENT_ID = "";
 
 
