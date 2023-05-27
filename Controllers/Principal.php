@@ -20,11 +20,31 @@
 
 
 		//Vista shop
-		public function shop() {
+		public function shop($page) {
+			//Hacemos funcionar el paginador
+			//Si no existe page por defecto será 1, de lo contrario será esa página
+			$pagina = (empty($page)) ? 1 : $page ;
+			//Indicamos cuantos productos por página vamos a mostrar
+			$porPagina = 1;
+			//Hacemos el calculo
+			$desde = ($pagina - 1) * $porPagina;
+
 			$data['title'] = 'Nuestros Productos';
-			$data['productos'] = $this->model->getProductos();
+
+			//Una vez hecho los calculos pasamos los parametros
+			$data['productos'] = $this->model->getProductos($desde, $porPagina);
+			$data['pagina'] = $pagina;
+
+			//Llamamos al metodo getTotalProductos()
+			$total = $this->model->getTotalProductos();
+
+			//Calculamos el total por página
+			$data['total'] = ceil($total['Total'] / $porPagina);
+
+			//Llamamos a la vista del archivo shop.php(Tienda)
 			$this->views->getView('principal', "shop", $data);
 		}
+
 
 		//Vista detail
 		public function detail($id_producto) {

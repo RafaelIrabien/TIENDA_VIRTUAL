@@ -5,7 +5,7 @@
 			parent::__CONSTRUCT();
 		}
 
-		//Traer datos del producto seleccionado
+		//Obtener datos del producto seleccionado
 		public function getProducto($id_producto) {
 			$sql = "SELECT p.*, c.categoria FROM productos p 
 						INNER JOIN 
@@ -16,10 +16,17 @@
 			return $this->select($sql);
 		}
 
-
-		public function getProductos() {
-			$sql = "SELECT * FROM productos";
+		//Obtener todos los productos
+		public function getProductos($desde, $porPagina) {
+			$sql = "SELECT * FROM productos LIMIT $desde, $porPagina";
 			return $this->selectAll($sql);
+		}
+
+
+		//Obtener el total de productos
+		public function getTotalProductos() {
+			$sql = "SELECT COUNT(*) AS Total FROM productos";
+			return $this->select($sql);
 		}
 
 

@@ -128,16 +128,29 @@
 
 
                 <div div="row">
-                    <ul class="pagination pagination-lg justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
-                        </li>
+                    <ul class="pagination pagination-lg 
+                    justify-content-end">
+
+                    <?php 
+                        $anterior = $data['pagina'] - 1;
+                        $siguiente = $data['pagina'] + 1;
+
+                        //Hacemos una validación para ocultar esta página
+                        if ($data['pagina'] > 1) {
+                          echo  '<li class="page-item">
+                                <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="'.$anterior.'" tabindex="-1">Anterior</a>
+                                </li>';
+                        }
+
+                        //Mostramos este botón hasta que sea mayor o igual a $siguiente
+                        if ($data['total'] >= $siguiente) {
+                            echo '<li class="page-item">
+                                <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-white" href="'.$siguiente.'">Siguiente</a>
+                                  </li>';
+                        }
+                     ?>
+                        
+                    
                     </ul>
                 </div>
             </div>
