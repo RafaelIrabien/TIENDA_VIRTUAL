@@ -29,8 +29,6 @@
 			//Hacemos el calculo
 			$desde = ($pagina - 1) * $porPagina;
 
-			$data['title'] = 'Nuestros Productos';
-
 			//Una vez hecho los calculos pasamos los parametros
 			$data['productos'] = $this->model->getProductos($desde, $porPagina);
 			$data['pagina'] = $pagina;
@@ -41,6 +39,7 @@
 			//Calculamos el total por página
 			$data['total'] = ceil($total['Total'] / $porPagina);
 
+			$data['title'] = 'Nuestros Productos';
 			//Llamamos a la vista del archivo shop.php(Tienda)
 			$this->views->getView('principal', "shop", $data);
 		}
@@ -56,9 +55,35 @@
 
 
 		//Vista categorias
-		public function categorias($id_categoria) {
-			$data['productos'] = $this->model->getProductosCat($id_categoria);
+		public function categorias($datos) {
+			$id_categoria = 1;
+			$page = 1;
+
+			//Convertimos $datos en un array
+			//Vamos a convertir separando desde una ','
+			$array = explode(',', $datos);
+			if (isset($array[0])) {
+				if (!empty($array[0])) {
+					$id_categoria = $array[0];
+				}
+			}
+
+			if (isset($array[1])) {
+				if (!empty($array[1])) {
+					$page = $array[1];
+				}
+			}
+			//Agregamos un paginador
+			$pagina = (empty($page)) ? 1 : $page ;
+			$porPagina = 1;
+			$desde = ($pagina - 1) * $porPagina;
+			$data['pagina'] = $pagina;
+			$total = $this->model->getTotalProductosCat($id_categoria);
+			$data['total'] = ceil($total['Total'] / $porPagina);
+
+			$data['productos'] = $this->model->getProductosCat($id_categoria, $desde, $porPagina);
 			$data['title'] = 'Categorías';
+			$data['id_categoria'] = $id_categoria;
 			$this->views->getView('principal', "categorias", $data);
 		}
 
