@@ -103,7 +103,7 @@
                 
              ?>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="<?php echo BASE_URL . 'assets/img/category_img_01.jpg'; ?>" class="rounded-circle img-fluid border"></a>
+                <a href="<?php echo BASE_URL . 'principal/categorias/' . $categoria['id_categoria']; ?>"><img src="<?php echo BASE_URL . 'assets/img/category_img_01.jpg'; ?>" class="rounded-circle img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3">
                     <?php echo $categoria['categoria']; ?>
                 </h5>

@@ -30,6 +30,13 @@
 		}
 
 
+		//Productos relacionados con la categoría
+		public function getProductosCat($id_categoria) {
+			$sql = "SELECT * FROM productos WHERE id_categoria = $id_categoria";
+			return $this->selectAll($sql);
+		}
+
+
 		
 	}
 

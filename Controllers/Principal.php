@@ -55,6 +55,14 @@
 		}
 
 
+		//Vista categorias
+		public function categorias($id_categoria) {
+			$data['productos'] = $this->model->getProductosCat($id_categoria);
+			$data['title'] = 'Categorías';
+			$this->views->getView('principal', "categorias", $data);
+		}
+
+
 		//Vista contact
 		public function contact() {
 			$data['title'] = 'Contáctanos';
