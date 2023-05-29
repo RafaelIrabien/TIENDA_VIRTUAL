@@ -45,9 +45,9 @@
 
 
 		//Obtener otros productos relacionados aleatorios
-		public function getAleatorios($id_categoria) {
+		public function getAleatorios($id_categoria, $id_producto) {
 			//La función RAND() genera un número aleatorio para cada fila y luego las filas se ordenan en función de esos números aleatorios.
-			$sql = "SELECT * FROM productos WHERE id_categoria = $id_categoria ORDER BY RAND() LIMIT 20";
+			$sql = "SELECT * FROM productos WHERE id_categoria = $id_categoria AND id_producto != $id_producto ORDER BY RAND() LIMIT 20";
 			return $this->selectAll($sql);
 
 		}
