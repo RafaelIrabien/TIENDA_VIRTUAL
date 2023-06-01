@@ -25,7 +25,7 @@
 			//Si no existe page por defecto será 1, de lo contrario será esa página
 			$pagina = (empty($page)) ? 1 : $page ;
 			//Indicamos cuantos productos por página vamos a mostrar
-			$porPagina = 1;
+			$porPagina = 2;
 			//Hacemos el calculo
 			$desde = ($pagina - 1) * $porPagina;
 
