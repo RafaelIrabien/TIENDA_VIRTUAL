@@ -30,6 +30,12 @@ function  agregarDeseo(idProducto) {
     })
 
     localStorage.setItem('listaDeseo', JSON.stringify(listaDeseo));
+    //Mostramos un mensaje
+    Swal.fire(
+        'Aviso',
+        'Producto agregado a la lista de deseos',
+        'success'
+    )
     //Llamamos a la función cantidadDeseo() cada vez que se agrega a la
     //lista de deseos
     cantidadDeseo();
