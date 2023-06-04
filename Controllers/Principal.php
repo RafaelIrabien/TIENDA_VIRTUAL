@@ -102,6 +102,28 @@
 			$data['title'] = 'Tu lista de deseos';
 			$this->views->getView('principal', "deseo", $data);
 		}
+
+
+		//Obtener productos a partir de la lista de deseos
+		public function listaDeseo() {
+			$datos = file_get_contents('php://input');
+			$json = json_decode($datos, true);
+			$array = array();
+			foreach ($json as $producto) {
+				$result = $this->model->getListaDeseo($producto['idProducto']);
+				$data['id'] = $result['id_producto'];
+				$data['nombre'] = $result['nombre'];
+				$data['precio'] = $result['precio']; 
+				//La cantidad lo recuperamos desde el json
+				$data['cantidad'] = $producto['cantidad'];
+				$data['imagen'] = $result['imagen'];
+
+				array_push($array, $data);
+			}
+
+			echo json_encode($array, JSON_UNESCAPED_UNICODE);
+			die();
+		}
 	}
 
 

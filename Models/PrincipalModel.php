@@ -53,6 +53,13 @@
 		}
 
 
+		//Obtener productos a partir de la lista de deseos
+		public function getListaDeseo($id_producto) {
+			$sql = "SELECT * FROM productos WHERE id_producto = $id_producto";
+			return $this->select($sql);
+		}
+
+
 		
 	}
 
